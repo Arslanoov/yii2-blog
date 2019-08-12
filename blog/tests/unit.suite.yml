@@ -1,0 +1,8 @@
+class_name: UnitTester
+bootstrap: false
+modules:
+  Db:
+    config:
+      dsn: 'mysql:host=localhost;dbname=blog_test'
+      user: 'root'
+      password: ''
