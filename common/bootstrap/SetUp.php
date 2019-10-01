@@ -8,7 +8,8 @@ use blog\listeners\User\UserSignUpRequestedListener;
 use blog\useCases\ContactService;
 use blog\dispatchers\SimpleEventDispatcher;
 use blog\listeners\User\UserSignUpConfirmedListener;
-use common\modules\languages\models\LanguageKsl;
+use yiidreamteam\upload\ImageUploadBehavior;
+use blog\entities\behaviors\FlySystemImageUploadBehavior;
 use Yii;
 use yii\base\BootstrapInterface;
 use yii\di\Container;
@@ -42,6 +43,13 @@ class SetUp implements BootstrapInterface
                 UserSignUpConfirmed::class => [UserSignupConfirmedListener::class],
             ]));
         });
+
+        /*
+           $container->setSingleton(Filesystem::class, function () use ($app) {
+               return new Filesystem(new Ftp($app->params['ftp']));
+           });
+           $container->set(ImageUploadBehavior::class, FlySystemImageUploadBehavior::class);
+       */
 
         return new SimpleEventDispatcher($container, [
             UserSignUpRequested::class => [UserSignupRequestedListener::class],
