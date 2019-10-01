@@ -34,7 +34,8 @@
         "guzzlehttp/guzzle": "^6.2",
         "filsh/yii2-oauth2-server": "^2.0",
         "zircote/swagger-php": "^2.0",
-        "codeception/specify": "~0.4.3"
+        "codeception/specify": "~0.4.3",
+        "yiisoft/yii2-redis": "^2.0"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.1.0",
